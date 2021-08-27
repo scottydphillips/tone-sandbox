@@ -22,8 +22,17 @@ import {
   quarterNote,
   halfNote,
   wholeNote,
-  rhythmString
-} from './components/rhythm.fn'
+  rhythmString,
+  toneLoop
+} from './components/rhythm.fn';
+import {
+  pushWholeNote,
+  pushHalfNote,
+  pushQuarterNote,
+  push8thNote,
+  push16thNote,
+  triggerSounds
+} from './components/rhythmArray';
 
 
 window.addEventListener('keydown', playNote);
@@ -64,13 +73,13 @@ function App() {
         <div className='white-key' onClick={playC5}>K</div>
       </div>
       <div className='rhythms'>
-        <button className='rhythm-button' onClick={eighthNote}><img src='https://imgur.com/IHOVoOR' alt='Eighth Note'></img></button>
-        <button className='rhythm-button' onClick={quarterNote}><img src='https://imgur.com/AOCeRrj' alt='Quarter Note'></img></button>
-        <button className='rhythm-button' onClick={halfNote}><img src='https://imgur.com/ts9pR4H' alt='Half Note'></img></button>
-        <button className='rhythm-button' onClick={wholeNote}><img src='https://imgur.com/eoiRnOg' alt='Whole Note'></img></button>
+        <button className='rhythm-button' onClick={push8thNote}><img src='https://imgur.com/IHOVoOR' alt='Eighth Note'></img></button>
+        <button className='rhythm-button' onClick={pushQuarterNote}><img src='https://imgur.com/AOCeRrj' alt='Quarter Note'></img></button>
+        <button className='rhythm-button' onClick={pushHalfNote}><img src='https://imgur.com/ts9pR4H' alt='Half Note'></img></button>
+        <button className='rhythm-button' onClick={pushWholeNote}><img src='https://imgur.com/eoiRnOg' alt='Whole Note'></img></button>
       </div>
       <div className='play'>
-        <button className='play-button' onClick={rhythmString}>Play rhythm</button>
+        <button className='play-button' onClick={triggerSounds}>Play rhythm</button>
       </div>
     </div>
   );
